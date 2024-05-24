@@ -19,7 +19,8 @@
         "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
         "onelogin/php-saml": "^4.1",
         "ramsey/uuid": "^4.0",
-        "cerbero/command-validator": "^2.5"
+        "cerbero/command-validator": "^2.5",
+        "illuminate/validation": "^8.0|^9.0|^10.0|^11.0"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.9",
