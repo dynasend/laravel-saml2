@@ -2,7 +2,6 @@
 
 namespace Slides\Saml2\Commands;
 
-use Cerbero\CommandValidator\ValidatesInput;
 use Illuminate\Validation\Rules\Exists;
 use Illuminate\Validation\Rules\In;
 use Illuminate\Validation\Rules\Unique;

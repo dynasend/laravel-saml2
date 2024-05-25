@@ -2,7 +2,7 @@
 
 namespace Slides\Saml2\Commands;
 
-use Slides\Saml2\Repositories\TenantRepository;
+use Slides\Saml2\Repositories\IdentityProviderRepository;
 
 class ListAll extends \Illuminate\Console\Command
 {
@@ -23,16 +23,16 @@ class ListAll extends \Illuminate\Console\Command
     protected $description = 'List all the tenants';
 
     /**
-     * @var TenantRepository
+     * @var IdentityProviderRepository
      */
-    protected TenantRepository $tenants;
+    protected IdentityProviderRepository $tenants;
 
     /**
      * DeleteTenant constructor.
      *
-     * @param TenantRepository $tenants
+     * @param IdentityProviderRepository $tenants
      */
-    public function __construct(TenantRepository $tenants)
+    public function __construct(IdentityProviderRepository $tenants)
     {
         $this->tenants = $tenants;
 
