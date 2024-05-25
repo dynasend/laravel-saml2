@@ -18,7 +18,7 @@ class CreateSaml2SessionsTable extends Migration
             $table->foreignId('idp_id')->constrained('saml2_identity_providers');
             $table->foreignId('user_id')->nullable();
             $table->json('payload');
-            $table->timestamp('created_at');
+            $table->timestamps();
         });
     }
 
