@@ -62,6 +62,11 @@ class Update extends \Illuminate\Console\Command
     {
         $tenant = $this->repository->findById($this->argument('id'));
 
+        if (! $tenant) {
+            $this->error(sprintf('Identity Provider %s not found.', $this->argument('id')));
+            return 1;
+        }
+
         $tenant->update(array_filter([
             'key' => $this->option('key'),
             'idp_entity_id' => $this->option('entityId'),
