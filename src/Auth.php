@@ -173,16 +173,21 @@ class Auth
     /**
      * Get metadata about the local SP. Use this to configure your Saml2 IdP.
      *
+     * @param int|null $validUntil
+     * @param int|null $cacheDuration
      * @return string
      *
      * @throws \OneLogin\Saml2\Error
      * @throws \Exception
      * @throws \InvalidArgumentException If metadata is not correctly set
      */
-    public function getMetadata(): string
+    public function getMetadata(int $validUntil = null, int $cacheDuration = null): string
     {
         $settings = $this->base->getSettings();
-        $metadata = $settings->getSPMetadata();
+        $metadata = $settings->getSPMetadata(
+            validUntil: $validUntil ? time() + $validUntil : null,
+            cacheDuration: $cacheDuration,
+        );
         $errors = $settings->validateMetadata($metadata);
 
         if (!$errors) {

@@ -22,7 +22,9 @@ class Saml2Controller extends Controller
      */
     public function metadata(Auth $auth)
     {
-        $metadata = $auth->getMetadata();
+        $validUntil = config('saml2.sp.validUntil');
+        $cacheDuration = config('saml2.sp.cacheDuration');
+        $metadata = $auth->getMetadata($validUntil, $cacheDuration);
 
         return response($metadata, 200, ['Content-Type' => 'text/xml']);
     }

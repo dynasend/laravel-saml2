@@ -248,6 +248,20 @@ return [
         'singleLogoutService' => [
             'url' => ''
         ],
+
+        /*
+         * Valid Until (in seconds)
+         * Default value will be 2 days
+         *
+         */
+        'validUntil' => 172800,
+
+        /*
+         * Cache Duration (in seconds)
+         * Default value will be 1 week
+         *
+         */
+        'cacheDuration' => 604800,
     ],
 
     /*
